@@ -11,7 +11,14 @@
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.3/dist/aframe-physics-system.js"></script>
 
 <body>
-    <a-scene>
+    <a-scene physics="driver: ammo; debug: true">
+        <!-- #region camera -->
+         <a-entity camera="" id="camera" position="0 2 0" look-controls="" wasd-controls="fly: false" rotation="-87.82276037850286 -180.13793078913102 0">
+            <a-entity cursor="" geometry="primitive: circle; radius: 0.005" position="0 0 -0.5" raycaster="objects: .clickable"></a-entity>
+        </a-entity>
+        <!-- #endregion camera -->
+       
+        <!-- #region assets  -->
         <a-assets>
         <!--#region 3D models -->
             <a-asset-item id="Earth" src="earth.glb"></a-asset-item>
@@ -44,14 +51,15 @@
             <a-asset-item id="SnowFloor" src="snowFloor.glb"></a-asset-item>
             <a-asset-item id="SnowTrees" src="snowTrees.glb"></a-asset-item>
             <a-asset-item id="LoopyPortal" src="loopyPortal.glb"></a-asset-item>
-            <a-asset-item id="MommyWagy" src=".glb"></a-asset-item>
-            <a-asset-item id="MommyWagy" src="mommyWagy.glb"></a-asset-item>
+            <a-asset-item id="Patric" src="patric.glb"></a-asset-item>
+            <a-asset-item id="Hirobo" src="Hirobo.glb"></a-asset-item>
+            <a-asset-item id="Table" src="GallaVR/Table.glb"></a-asset-item>
             <!-- #endregion 3D models -->
         <!--#region Textures -->
-        <img id="IceWall" src="iceWall.glb"></img>
-        <img id="MetalFloor" src="metalFloor.glb"></img>
-        <img id="GridFloor" src="gridFloor.glb"></img>
-        <img id="WoodenFloor" src="woodenFloor.glb"></img>
+        <img id="IceWall" src="iceWall.png"></img>
+        <img id="MetalFloor" src="metalFloor.png"></img>
+        <img id="GridFloor" src="gridFloor.png"></img>
+        <img id="WoodenFloor" src="FoodWorld/woodenFloor.png"></img>
         <!-- #endregion Textures -->
         <!-- #region Music -->
         <audio id="WinterMusic" src="winter.mp3"></audio>
@@ -63,14 +71,265 @@
         <audio id="WinterMusic" src="winter.mp3"></audio>
         <!-- #endregion Music -->         
         </a-assets> 
+        <!-- #endregion assets -->
 
-        <!-- Environment -->
-        <a-entity environment="preset: forest; playArea: 5"></a-entity>
+        <!--#region Environment -->
+        <a-entity environment="preset: forest; playArea: 8"></a-entity>
+        <!-- #endregion Environment -->
 
         <!--#region Floor -->
         <a-entity>
-            <a-entity></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="0 0.2 0" scale="5 0.5 5"></a-entity>
+
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="5 0.2 0" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="10 0.2 0" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="15 0.2 0" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 0" scale="5 0.5 5"></a-entity>
+
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-5 0.2 0" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-10 0.2 0" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-15 0.2 0" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 0" scale="5 0.5 5"></a-entity>
+
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="0 0.2 5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="0 0.2 10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="0 0.2 15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="0 0.2 20" scale="5 0.5 5"></a-entity>
+
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="0 0.2 -5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="0 0.2 -10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="0 0.2 -15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="0 0.2 -20" scale="5 0.5 5"></a-entity>
+
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-5 0.2 -5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-5 0.2 -10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-5 0.2 -15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-5 0.2 -20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-10 0.2 -5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-10 0.2 -10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-10 0.2 -15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-10 0.2 -20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-15 0.2 -5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-15 0.2 -10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-15 0.2 -15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-15 0.2 -20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 -5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 -10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 -15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 -20" scale="5 0.5 5"></a-entity>
+
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="5 0.2 -5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="5 0.2 -10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="5 0.2 -15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="5 0.2 -20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="10 0.2 -5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="10 0.2 -10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="10 0.2 -15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="10 0.2 -20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="15 0.2 -5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="15 0.2 -10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="15 0.2 -15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="15 0.2 -20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 -5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 -10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 -15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 -20" scale="5 0.5 5"></a-entity>
+
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-5 0.2 5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-5 0.2 10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-5 0.2 15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-5 0.2 20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-10 0.2 5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-10 0.2 10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-10 0.2 15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-10 0.2 20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-15 0.2 5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-15 0.2 10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-15 0.2 15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-15 0.2 20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 20" scale="5 0.5 5"></a-entity>
+
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="5 0.2 5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="5 0.2 10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="5 0.2 15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="5 0.2 20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="10 0.2 5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="10 0.2 10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="10 0.2 15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="10 0.2 20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="15 0.2 5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="15 0.2 10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="15 0.2 15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="15 0.2 20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 20" scale="5 0.5 5"></a-entity>
+
+
+
+            
         </a-entity>
+        <!-- #endregion Floor -->
+
+        <!-- #region wall -->
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 0" scale="0.5 10 5"></a-entity>
+
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 0" scale="0.5 10 5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 5" scale="0.5 10 5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 10" scale="0.5 10 5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 15" scale="0.5 10 5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 20" scale="0.5 10 5"></a-entity>
+
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 0" scale="0.5 10 5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 5" scale="0.5 10 5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 10" scale="0.5 10 5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 15" scale="0.5 10 5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 20" scale="0.5 10 5"></a-entity>
+
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 -0" scale="0.5 10 5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 -5" scale="0.5 10 5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 -10" scale="0.5 10 5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 -15" scale="0.5 10 5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 -20" scale="0.5 10 5"></a-entity>
+
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 -0" scale="0.5 10 5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 -5" scale="0.5 10 5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 -10" scale="0.5 10 5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 -15" scale="0.5 10 5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 -20" scale="0.5 10 5"></a-entity>
+
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-0 0.2 20" scale="5 10 0.5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-5 0.2 20" scale="5 10 0.5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-10 0.2 20" scale="5 10 0.5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-15 0.2 20" scale="5 10 0.5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 20" scale="5 10 0.5"></a-entity>
+
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="5 0.2 -20" scale="5 10 0.5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="10 0.2 -20" scale="5 10 0.5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="15 0.2 -20" scale="5 10 0.5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 -20" scale="5 10 0.5"></a-entity>
+
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-5 0.2 -20" scale="5 10 0.5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-10 0.2 -20" scale="5 10 0.5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-15 0.2 -20" scale="5 10 0.5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 0.2 -20" scale="5 10 0.5"></a-entity>
+
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="5 0.2 20" scale="5 10 0.5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="10 0.2 20" scale="5 10 0.5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="15 0.2 20" scale="5 10 0.5"></a-entity>
+        <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 0.2 20" scale="5 10 0.5"></a-entity>
+
+        <!-- #endregion wall -->
+  
+        <!--#region Sealing -->
+        <a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="0 5 0" scale="5 0.5 5"></a-entity>
+
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="5 5 0" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="10 5 0" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="15 5 0" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 5 0" scale="5 0.5 5"></a-entity>
+
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-5 5 0" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-10 5 0" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-15 5 0" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 5 0" scale="5 0.5 5"></a-entity>
+
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="0 5 5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="0 5 10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="0 5 15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="0 5 20" scale="5 0.5 5"></a-entity>
+
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="0 5 -5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="0 5 -10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="0 5 -15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="0 5 -20" scale="5 0.5 5"></a-entity>
+
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-5 5 -5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-5 5 -10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-5 5 -15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-5 5 -20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-10 5 -5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-10 5 -10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-10 5 -15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-10 5 -20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-15 5 -5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-15 5 -10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-15 5 -15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-15 5 -20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 5 -5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 5 -10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 5 -15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 5 -20" scale="5 0.5 5"></a-entity>
+
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="5 5 -5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="5 5 -10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="5 5 -15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="5 5 -20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="10 5 -5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="10 5 -10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="10 5 -20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="10 5 -15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="15 5 -5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="15 5 -10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="15 5 -15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="15 5 -20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 5 -5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 5 -10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 5 -15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 5 -20" scale="5 0.5 5"></a-entity>
+
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-5 5 5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-5 5 10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-5 5 15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-5 5 20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-10 5 5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-10 5 10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-10 5 15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-10 5 20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-15 5 5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-15 5 10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-15 5 15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-15 5 20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 5 5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 5 10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 5 15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="-20 5 20" scale="5 0.5 5"></a-entity>
+
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="5 5 5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="5 5 10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="5 5 15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="5 5 20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="10 5 5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="10 5 10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="10 5 15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="10 5 20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="15 5 5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="15 5 10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="15 5 15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="15 5 20" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 5 5" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 5 10" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 5 15" scale="5 0.5 5"></a-entity>
+            <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: #WoodenFloor"  geometry="primitive: box" position="20 5 20" scale="5 0.5 5"></a-entity>
+
+        </a-entity>
+        <!-- #endregion sealing -->
+
+        <!-- #region Tables -->
+        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.5 0" position="0 0.2 18"  id="Astro"></a-entity>
+        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.5 0" position="5 0.2 18"  id="Food"></a-entity>
+        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.5 0" position="10 0.2 18" id="Galla"></a-entity>
+        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.5 0" position="15 0.2 18" id="Loopy"></a-entity>
+        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.5 0" position="-5 0.2 18" id="Spooky"></a-entity>
+        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.5 0" position="-10 0.2 18"id="Winter"></a-entity>
+        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.5 0" position="-15 0.2 18"id="Fall"></a-entity>
+        <!-- #endregion Tables  -->
+   
     </a-scene>
 </body>
 </html>
