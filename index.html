@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assets_Library</title>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script> 
+    <script src="https://unpkg.com/aframe-environment-component@1.5.x/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.6.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/MozillaReality/ammo.js@8bbc0ea/builds/ammo.wasm.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.3/dist/aframe-physics-system.js"></script>
+
+<body>
+    <a-scene>
+        <a-assets>
+        <!--#region 3D models -->
+            <a-asset-item id="Earth" src="earth.glb"></a-asset-item>
+            <a-asset-item id="Mercury" src="mercury.glb"></a-asset-item>
+            <a-asset-item id="Venus" src="venus.glb"></a-asset-item>
+            <a-asset-item id="Mars" src="mars.glb"></a-asset-item>
+            <a-asset-item id="Jupitur" src="jupiter.glb"></a-asset-item>
+            <a-asset-item id="Saturn" src="Saturn.glb"></a-asset-item>
+            <a-asset-item id="Uranus" src="uranus.glb"></a-asset-item>
+            <a-asset-item id="Nepton" src="nepton.glb"></a-asset-item>
+            <a-asset-item id="Sun" src="sun.glb"></a-asset-item>
+            <a-asset-item id="Chips" src="chips.glb"></a-asset-item>
+            <a-asset-item id="Donuts" src="donuts.glb"></a-asset-item>
+            <a-asset-item id="Croissant" src="croissant.glb"></a-asset-item>
+            <a-asset-item id="Cupcake" src="cupcake.glb"></a-asset-item>
+            <a-asset-item id="Chocolate_Cake" src="chocolateCake.glb"></a-asset-item>
+            <a-asset-item id="Fish" src="fish.glb"></a-asset-item>
+            <a-asset-item id="IceCream" src="iceCream.glb"></a-asset-item>
+            <a-asset-item id="Turkey" src="turkey.glb"></a-asset-item>
+            <a-asset-item id="TeenGirl" src="teenGirl.glb"></a-asset-item>
+            <a-asset-item id="Skeleton" src="skeleton.glb"></a-asset-item>
+            <a-asset-item id="DamagedWall" src="damagedWall.glb"></a-asset-item>
+            <a-asset-item id="floordamaged" src="damaged_Floor.glb"></a-asset-item>
+            <a-asset-item id="Pumpkin" src="pumpkin.glb"></a-asset-item>
+            <a-asset-item id="HalloweenChar" src="halloweenChar.glb"></a-asset-item>
+            <a-asset-item id="Monster" src="monster.glb"></a-asset-item>
+            <a-asset-item id="Snowman" src="snowman.glb"></a-asset-item>
+            <a-asset-item id="House" src="house.glb"></a-asset-item>
+            <a-asset-item id="Campfire" src="campfire.glb"></a-asset-item>
+            <a-asset-item id="SnowFloor" src="snowFloor.glb"></a-asset-item>
+            <a-asset-item id="SnowTrees" src="snowTrees.glb"></a-asset-item>
+            <a-asset-item id="LoopyPortal" src="loopyPortal.glb"></a-asset-item>
+            <a-asset-item id="MommyWagy" src=".glb"></a-asset-item>
+            <a-asset-item id="MommyWagy" src="mommyWagy.glb"></a-asset-item>
+            <!-- #endregion 3D models -->
+        <!--#region Textures -->
+        <img id="IceWall" src="iceWall.glb"></img>
+        <img id="MetalFloor" src="metalFloor.glb"></img>
+        <img id="GridFloor" src="gridFloor.glb"></img>
+        <img id="WoodenFloor" src="woodenFloor.glb"></img>
+        <!-- #endregion Textures -->
+        <!-- #region Music -->
+        <audio id="WinterMusic" src="winter.mp3"></audio>
+        <audio id="SpaceMusic" src="Space.mp3"></audio>
+        <audio id="EatingSound" src="eating.mp3"></audio>
+        <audio id="Creepy" src="creepy.mp3"></audio>
+        <audio id="Cinematic" src="cinematic.mp3"></audio>
+        <audio id="Melody" src="melody.mp3"></audio>
+        <audio id="WinterMusic" src="winter.mp3"></audio>
+        <!-- #endregion Music -->         
+        </a-assets> 
+
+        <!-- Environment -->
+        <a-entity environment="preset: forest; playArea: 5"></a-entity>
+
+        <!--#region Floor -->
+        <a-entity>
+            <a-entity></a-entity>
+        </a-entity>
+    </a-scene>
+</body>
+</html>
