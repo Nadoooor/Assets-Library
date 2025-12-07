@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assets_Library</title>
-    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script> 
+    <script src="aframe.js"></script> 
     <script src="https://unpkg.com/aframe-environment-component@1.5.x/dist/aframe-environment-component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.6.0/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/MozillaReality/ammo.js@8bbc0ea/builds/ammo.wasm.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.3/dist/aframe-physics-system.js"></script>
 
+    <script src="Fly.js"></script>
+    <script src="Switch.js"></script>
 <body>
     <a-scene physics="driver: ammo; debug: true">
         <!-- #region camera -->
-         <a-entity camera="" id="camera" position="0 2 0" look-controls="" wasd-controls="fly: false" rotation="-87.82276037850286 -180.13793078913102 0">
+         <a-entity camera="" fly id="camera" position="0 2 0" look-controls="" wasd-controls="fly: false" rotation="-87.82276037850286 -180.13793078913102 0">
             <a-entity cursor="" geometry="primitive: circle; radius: 0.005" position="0 0 -0.5" raycaster="objects: .clickable"></a-entity>
         </a-entity>
         <!-- #endregion camera -->
@@ -21,15 +23,15 @@
         <!-- #region assets  -->
         <a-assets>
         <!--#region 3D models -->
-            <a-asset-item id="Earth" src="earth.glb"></a-asset-item>
-            <a-asset-item id="Mercury" src="mercury.glb"></a-asset-item>
-            <a-asset-item id="Venus" src="venus.glb"></a-asset-item>
-            <a-asset-item id="Mars" src="mars.glb"></a-asset-item>
-            <a-asset-item id="Jupitur" src="jupiter.glb"></a-asset-item>
-            <a-asset-item id="Saturn" src="Saturn.glb"></a-asset-item>
-            <a-asset-item id="Uranus" src="uranus.glb"></a-asset-item>
-            <a-asset-item id="Nepton" src="nepton.glb"></a-asset-item>
-            <a-asset-item id="Sun" src="sun.glb"></a-asset-item>
+            <a-asset-item id="Earth" src="/AstroWorld/Earth.glb"></a-asset-item>
+            <a-asset-item id="Mercury" src="/AstroWorld/Mercury.glb"></a-asset-item>
+            <a-asset-item id="Venus" src="/AstroWorld/Venus.glb"></a-asset-item>
+            <a-asset-item id="Mars" src="/AstroWorld/Mars.glb"></a-asset-item>
+            <a-asset-item id="Jupitur" src="/AstroWorld/Jupiter.glb"></a-asset-item>
+            <a-asset-item id="Saturn" src="/AstroWorld/Saturn.glb"></a-asset-item>
+            <a-asset-item id="Uranus" src="/AstroWorld/Uranus.glb"></a-asset-item>
+            <a-asset-item id="Neptune" src="/AstroWorld/Uranus.glb"></a-asset-item>
+            <a-asset-item id="Sun" src="/AstroWorld/Sun.glb"></a-asset-item>
             <a-asset-item id="Chips" src="chips.glb"></a-asset-item>
             <a-asset-item id="Donuts" src="donuts.glb"></a-asset-item>
             <a-asset-item id="Croissant" src="croissant.glb"></a-asset-item>
@@ -321,13 +323,48 @@
         <!-- #endregion sealing -->
 
         <!-- #region Tables -->
-        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.5 0" position="0 0.2 18"  id="Astro"></a-entity>
-        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.5 0" position="5 0.2 18"  id="Food"></a-entity>
-        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.5 0" position="10 0.2 18" id="Galla"></a-entity>
-        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.5 0" position="15 0.2 18" id="Loopy"></a-entity>
-        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.5 0" position="-5 0.2 18" id="Spooky"></a-entity>
-        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.5 0" position="-10 0.2 18"id="Winter"></a-entity>
-        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.5 0" position="-15 0.2 18"id="Fall"></a-entity>
+        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.1 0; fit: manual" position="0 0.2 18"  id="Astro">
+            <a-triangle switch id="Astro" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
+            <a-triangle switch id="Astro" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
+            <a-text value="AstroWorld" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 3 1.5" rotation="0 180 0"></a-text>
+            <a-entity id="astroMODELS" position="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear"></a-entity>
+        </a-entity>
+        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.1 0; fit: manual;" position="5 0.2 18"  id="Food">
+            <a-triangle switch id="Food" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
+            <a-triangle switch id="Food" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
+            <a-text value="FoodWorld" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 3 1.5" rotation="0 180 0"></a-text>
+            <a-entity id="foodMODELS" position="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear"></a-entity>
+        </a-entity>
+        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.1 0; fit: manual;" position="10 0.2 18" id="Galla">
+            <a-triangle switch id="Loopy" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
+            <a-triangle switch id="Loopy" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
+            <a-text value="The_Loopy" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 3 1.5" rotation="0 180 0"></a-text>
+            <a-entity id="loopyMODELS" position="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear"></a-entity>
+        </a-entity>
+        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.1 0; fit: manual;" position="15 0.2 18" id="Loopy">
+            <a-triangle switch id="Winter" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
+            <a-triangle switch id="Winter" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
+            <a-text value="WinterNight" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 3 1.5" rotation="0 180 0"></a-text>
+            <a-entity id="winterMODELS" position="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear"></a-entity>
+        </a-entity>
+        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.1 0; fit: manual;" position="-5 0.2 18" id="Spooky">
+            <a-triangle switch id="Fall" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
+            <a-triangle switch id="Fall" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
+            <a-text value="Fall_Day" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 3 1.5" rotation="0 180 0"></a-text>
+            <a-entity id="fallMODELS" position="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear"></a-entity>
+        </a-entity>
+        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.1 0; fit: manual;" position="-10 0.2 18"id="Winter">
+            <a-triangle switch id="Puzz" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
+            <a-triangle switch id="Puzz" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
+            <a-text value="PuzzGrid" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 3 1.5" rotation="0 180 0"></a-text>
+            <a-entity id="puzzMODELS" position="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear"></a-entity>
+        </a-entity>
+        <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.1 0; fit: manual;" position="-15 0.2 18"id="Fall">
+            <a-triangle switch id="Galla" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
+            <a-triangle switch id="Galla" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
+            <a-text value="GallaVR" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 3 1.5" rotation="0 180 0"></a-text>
+            <a-entity id="gallaMODELS" position="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear" ></a-entity>
+        </a-entity>
         <!-- #endregion Tables  -->
    
     </a-scene>
