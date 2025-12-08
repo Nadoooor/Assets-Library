@@ -13,7 +13,7 @@
     <script src="Fly.js"></script>
     <script src="Switch.js"></script>
 <body>
-    <a-scene physics="driver: ammo; debug: true">
+    <a-scene physics="driver: ammo; debug: false">
         <!-- #region camera -->
          <a-entity camera="" fly id="camera" position="0 2 0" look-controls="" wasd-controls="fly: false" rotation="-87.82276037850286 -180.13793078913102 0">
             <a-entity cursor="" geometry="primitive: circle; radius: 0.005" position="0 0 -0.5" raycaster="objects: .clickable"></a-entity>
@@ -401,7 +401,10 @@
         </a-entity>
         <!-- #endregion Galla -->
         <!-- #endregion Tables  -->
-   
+        <a-text value="TEXTURES will be here, 
+        with a similer selecting tables like the models" scale="5 5 5" rotation="0 90 0" align="center" position="-19.6 3 0" color="red"></a-text>
+        
+        <a-text value="Music and SFX will be here, a music player besides a bascket and a ball to play with." scale="5 5 5" rotation="0 -90 0" align="center" position="19.6 3 0" color="red"></a-text>
     </a-scene>
 </body>
 </html>
