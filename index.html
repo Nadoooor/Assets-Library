@@ -36,26 +36,32 @@
             <a-asset-item id="Donuts" src="/FoodWorld/Donut.glb"></a-asset-item>
             <a-asset-item id="Croissant" src="/FoodWorld/Croissant.glb"></a-asset-item>
             <a-asset-item id="Cupcake" src="/FoodWorld/Cupcake.glb"></a-asset-item>
-            <a-asset-item id="Chocolate_Cake" src="/FoodWorld/chocolate_donuts.glb"></a-asset-item>
             <a-asset-item id="Fish" src="/FoodWorld/Fish.glb"></a-asset-item>
-            <a-asset-item id="IceCream" src="/FoodWorld/Fish.glb"></a-asset-item>
+            <a-asset-item id="IceCream" src="/FoodWorld/Ice Cream.glb"></a-asset-item>
             <a-asset-item id="Turkey" src="/FoodWorld/Turkey.glb"></a-asset-item>
-            <a-asset-item id="TeenGirl" src="teenGirl.glb"></a-asset-item>
-            <a-asset-item id="Skeleton" src="skeleton.glb"></a-asset-item>
-            <a-asset-item id="DamagedWall" src="damagedWall.glb"></a-asset-item>
-            <a-asset-item id="floordamaged" src="damaged_Floor.glb"></a-asset-item>
-            <a-asset-item id="Pumpkin" src="pumpkin.glb"></a-asset-item>
-            <a-asset-item id="HalloweenChar" src="halloweenChar.glb"></a-asset-item>
-            <a-asset-item id="Monster" src="monster.glb"></a-asset-item>
-            <a-asset-item id="Snowman" src="snowman.glb"></a-asset-item>
-            <a-asset-item id="House" src="house.glb"></a-asset-item>
+            <a-asset-item id="TeenGirl" src="/SpookyWorld/creepy_teen_girl.glb"></a-asset-item>
+            <a-asset-item id="Skeleton" src="/SpookyWorld/curious_skeleton.glb"></a-asset-item>
+            <a-asset-item id="DamagedWall" src="/SpookyWorld/damaged_wall.glb"></a-asset-item>
+            <a-asset-item id="floordamaged" src="/SpookyWorld/floor_material.glb"></a-asset-item>
+            <a-asset-item id="Pumpkin" src="/SpookyWorld/halloween_pumpkin.glb"></a-asset-item>
+            <a-asset-item id="HalloweenChar" src="/SpookyWorld/halloween-character.glb"></a-asset-item>
+            <a-asset-item id="Monster" src="/SpookyWorld/monster.glb"></a-asset-item>
+            <a-asset-item id="Snowman" src="/SpookyWorld/snowman_monster.glb"></a-asset-item>
+            <a-asset-item id="House" src="/SpookyWorld/spooky_house_halloween.glb"></a-asset-item>
+            <a-asset-item id="Mouth" src="/SpookyWorld/Mouth.glb"></a-asset-item>
+            <a-asset-item id="momwagy" src="/SpookyWorld/mommy_long_legs_arachnophobia.glb"></a-asset-item>
             <a-asset-item id="Campfire" src="campfire.glb"></a-asset-item>
             <a-asset-item id="SnowFloor" src="snowFloor.glb"></a-asset-item>
             <a-asset-item id="SnowTrees" src="snowTrees.glb"></a-asset-item>
             <a-asset-item id="LoopyPortal" src="loopyPortal.glb"></a-asset-item>
-            <a-asset-item id="Patric" src="patric.glb"></a-asset-item>
-            <a-asset-item id="Hirobo" src="Hirobo.glb"></a-asset-item>
+            <a-asset-item id="Patric" src="/GallaVR/Patric.glb"></a-asset-item>
+            <a-asset-item id="Hirobo" src="/GallaVR/Hirobo.glb"></a-asset-item>
             <a-asset-item id="Table" src="GallaVR/Table.glb"></a-asset-item>
+            <a-asset-item id="Current" src="GallaVR/current.glb"></a-asset-item>
+            <a-asset-item id="snakeboard" src="GallaVR/SnakeBoard.glb"></a-asset-item>
+            <a-asset-item id="snakepad" src="GallaVR/SnakePad.gltf"></a-asset-item>
+            <a-asset-item id="rr" src="GallaVR/rr.glb"></a-asset-item>
+            <a-asset-item id="here" src="GallaVR/here.glb"></a-asset-item>
             <!-- #endregion 3D models -->
         <!--#region Textures -->
         <img id="IceWall" src="iceWall.png"></img>
@@ -333,8 +339,8 @@
         <!-- #endregion -->
          <!-- #region food -->
         <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.1 0; fit: manual;" position="5 0.2 18"  id="Food">
-            <a-triangle switch="-" id="Food" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
-            <a-triangle switch="+" id="Food" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
+            <a-triangle switch="dir: -" id="Food" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
+            <a-triangle switch="dir:+" id="Food" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
             <a-text value="FoodWorld" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 4 1.5" rotation="0 180 0"></a-text>
             <a-entity id="foodMODELS" position="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear"></a-entity>
         </a-entity>
@@ -354,31 +360,31 @@
             <a-text value="WinterNight" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 4 1.5" rotation="0 180 0"></a-text>
             <a-entity id="winterMODELS" position="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear"></a-entity>
         </a-entity>
-        <!-- endregion -->
-         <!-- #region Fall -->
+         <!-- endregion Winter-->
+        <!-- #region Spooky -->
         <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.1 0; fit: manual;" position="-5 0.2 18" id="Spooky">
-            <a-triangle switch id="Fall" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
-            <a-triangle switch id="Fall" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
-            <a-text value="Fall_Day" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 4 1.5" rotation="0 180 0"></a-text>
-            <a-entity id="fallMODELS" position="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear"></a-entity>
+            <a-triangle switch="dir: -" id="Spooky" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
+            <a-triangle switch="dir: +" id="Spooky" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
+            <a-text value="Spooky_World" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 4 1.5" rotation="0 180 0"></a-text>
+            <a-entity id="spookyMODELS" position="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear"></a-entity>
         </a-entity>
-        <!-- #endregion -->
-         <!-- #region Puzz -->
+        <!-- #endregion spooky-->
+        <!-- #region Puzz -->
         <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.1 0; fit: manual;" position="-10 0.2 18"id="Winter">
             <a-triangle switch id="Puzz" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
             <a-triangle switch id="Puzz" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
             <a-text value="PuzzGrid" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 4 1.5" rotation="0 180 0"></a-text>
             <a-entity id="puzzMODELS" position="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear"></a-entity>
         </a-entity>
-        <!-- #endregion -->
-         <!-- #region Galla -->
+        <!-- #endregion Puzz -->
+        <!-- #region Galla -->
         <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.1 0; fit: manual;" position="-15 0.2 18"id="Fall">
-            <a-triangle switch id="Galla" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
-            <a-triangle switch id="Galla" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
+            <a-triangle switch="dir: -" id="Galla" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
+            <a-triangle switch="dir: +" id="Galla" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
             <a-text value="GallaVR" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 4 1.5" rotation="0 180 0"></a-text>
             <a-entity id="gallaMODELS" position="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear" ></a-entity>
         </a-entity>
-        <!-- #endregion -->
+        <!-- #endregion Galla -->
         <!-- #endregion Tables  -->
    
     </a-scene>
