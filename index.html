@@ -30,16 +30,16 @@
             <a-asset-item id="Jupitur" src="/AstroWorld/Jupiter.glb"></a-asset-item>
             <a-asset-item id="Saturn" src="/AstroWorld/Saturn.glb"></a-asset-item>
             <a-asset-item id="Uranus" src="/AstroWorld/Uranus.glb"></a-asset-item>
-            <a-asset-item id="Neptune" src="/AstroWorld/Uranus.glb"></a-asset-item>
+            <a-asset-item id="Neptune" src="/AstroWorld/Neptune.glb"></a-asset-item>
             <a-asset-item id="Sun" src="/AstroWorld/Sun.glb"></a-asset-item>
-            <a-asset-item id="Chips" src="chips.glb"></a-asset-item>
-            <a-asset-item id="Donuts" src="donuts.glb"></a-asset-item>
-            <a-asset-item id="Croissant" src="croissant.glb"></a-asset-item>
-            <a-asset-item id="Cupcake" src="cupcake.glb"></a-asset-item>
-            <a-asset-item id="Chocolate_Cake" src="chocolateCake.glb"></a-asset-item>
-            <a-asset-item id="Fish" src="fish.glb"></a-asset-item>
-            <a-asset-item id="IceCream" src="iceCream.glb"></a-asset-item>
-            <a-asset-item id="Turkey" src="turkey.glb"></a-asset-item>
+            <a-asset-item id="Chips" src="/FoodWorld/Chips.glb"></a-asset-item>
+            <a-asset-item id="Donuts" src="/FoodWorld/Donut.glb"></a-asset-item>
+            <a-asset-item id="Croissant" src="/FoodWorld/Croissant.glb"></a-asset-item>
+            <a-asset-item id="Cupcake" src="/FoodWorld/Cupcake.glb"></a-asset-item>
+            <a-asset-item id="Chocolate_Cake" src="/FoodWorld/chocolate_donuts.glb"></a-asset-item>
+            <a-asset-item id="Fish" src="/FoodWorld/Fish.glb"></a-asset-item>
+            <a-asset-item id="IceCream" src="/FoodWorld/Fish.glb"></a-asset-item>
+            <a-asset-item id="Turkey" src="/FoodWorld/Turkey.glb"></a-asset-item>
             <a-asset-item id="TeenGirl" src="teenGirl.glb"></a-asset-item>
             <a-asset-item id="Skeleton" src="skeleton.glb"></a-asset-item>
             <a-asset-item id="DamagedWall" src="damagedWall.glb"></a-asset-item>
@@ -323,48 +323,62 @@
         <!-- #endregion sealing -->
 
         <!-- #region Tables -->
+         <!-- #region Astro -->
         <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.1 0; fit: manual" position="0 0.2 18"  id="Astro">
-            <a-triangle switch id="Astro" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
-            <a-triangle switch id="Astro" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
-            <a-text value="AstroWorld" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 3 1.5" rotation="0 180 0"></a-text>
-            <a-entity id="astroMODELS" position="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear"></a-entity>
+            <a-triangle switch="dir: -" id="Astro" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
+            <a-triangle switch="dir: +" id="Astro" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
+            <a-text value="AstroWorld" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 4 1.5" rotation="0 180 0"></a-text>
+            <a-entity  position="0 2 0"   animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear"><a-entity id="astroMODELS"></a-entity></a-entity>
         </a-entity>
+        <!-- #endregion -->
+         <!-- #region food -->
         <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.1 0; fit: manual;" position="5 0.2 18"  id="Food">
-            <a-triangle switch id="Food" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
-            <a-triangle switch id="Food" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
-            <a-text value="FoodWorld" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 3 1.5" rotation="0 180 0"></a-text>
+            <a-triangle switch="-" id="Food" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
+            <a-triangle switch="+" id="Food" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
+            <a-text value="FoodWorld" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 4 1.5" rotation="0 180 0"></a-text>
             <a-entity id="foodMODELS" position="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear"></a-entity>
         </a-entity>
+        <!-- #endregion -->
+         <!-- #region loopy -->
         <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.1 0; fit: manual;" position="10 0.2 18" id="Galla">
             <a-triangle switch id="Loopy" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
             <a-triangle switch id="Loopy" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
-            <a-text value="The_Loopy" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 3 1.5" rotation="0 180 0"></a-text>
+            <a-text value="The_Loopy" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 4 1.5" rotation="0 180 0"></a-text>
             <a-entity id="loopyMODELS" position="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear"></a-entity>
         </a-entity>
+        <!-- #endregion -->
+         <!-- #region Winter -->
         <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.1 0; fit: manual;" position="15 0.2 18" id="Loopy">
             <a-triangle switch id="Winter" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
             <a-triangle switch id="Winter" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
-            <a-text value="WinterNight" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 3 1.5" rotation="0 180 0"></a-text>
+            <a-text value="WinterNight" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 4 1.5" rotation="0 180 0"></a-text>
             <a-entity id="winterMODELS" position="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear"></a-entity>
         </a-entity>
+        <!-- endregion -->
+         <!-- #region Fall -->
         <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.1 0; fit: manual;" position="-5 0.2 18" id="Spooky">
             <a-triangle switch id="Fall" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
             <a-triangle switch id="Fall" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
-            <a-text value="Fall_Day" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 3 1.5" rotation="0 180 0"></a-text>
+            <a-text value="Fall_Day" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 4 1.5" rotation="0 180 0"></a-text>
             <a-entity id="fallMODELS" position="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear"></a-entity>
         </a-entity>
+        <!-- #endregion -->
+         <!-- #region Puzz -->
         <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.1 0; fit: manual;" position="-10 0.2 18"id="Winter">
             <a-triangle switch id="Puzz" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
             <a-triangle switch id="Puzz" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
-            <a-text value="PuzzGrid" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 3 1.5" rotation="0 180 0"></a-text>
+            <a-text value="PuzzGrid" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 4 1.5" rotation="0 180 0"></a-text>
             <a-entity id="puzzMODELS" position="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear"></a-entity>
         </a-entity>
+        <!-- #endregion -->
+         <!-- #region Galla -->
         <a-entity gltf-model="#Table" ammo-body="type: static" ammo-shape="type: box; offset: 0 0.1 0; fit: manual;" position="-15 0.2 18"id="Fall">
             <a-triangle switch id="Galla" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 -90" position="0.4 1.18 -0.6" ></a-triangle>
             <a-triangle switch id="Galla" class="clickable" color="blue" material="side: double" scale="0.3 0.3 0.3" rotation="-90 0 90" position="-0.4 1.18 -0.6" ></a-triangle>
-            <a-text value="GallaVR" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 3 1.5" rotation="0 180 0"></a-text>
+            <a-text value="GallaVR" color="yellow" material="side: double" scale="1 1 1" align="center" position="0 4 1.5" rotation="0 180 0"></a-text>
             <a-entity id="gallaMODELS" position="0 2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear" ></a-entity>
         </a-entity>
+        <!-- #endregion -->
         <!-- #endregion Tables  -->
    
     </a-scene>
